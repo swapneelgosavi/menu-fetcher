@@ -1,0 +1,14 @@
+applications:
+- name: menu-fetcher
+  disk_quota: 1G
+  instances: 1
+  memory: 1G
+  path: target/menu-fetcher.war
+  timeout: 120
+  routes:
+  - route: menu-fetcher.cfapps.io
+  buildpacks:
+  - https://github.com/cloudfoundry/java-buildpack.git
+  stack: cflinuxfs3
+  services:
+  - elp
